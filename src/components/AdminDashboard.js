@@ -137,9 +137,6 @@ const AdminDashboard = () => {
   return (
     <div className="container mt-4">
       <h2 className="text-center text-primary">Admin Dashboard</h2>
-      <button className="btn btn-danger float-end" onClick={logout}>
-        Logout
-      </button>
 
       {/* Add Coupon */}
       <div className="mt-4">
