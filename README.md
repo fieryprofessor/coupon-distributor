@@ -1,70 +1,92 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Coupon Distributor - Frontend
 
-## Available Scripts
+This is the frontend of the Round-Robin Coupon Distribution system, built using React. It provides an admin panel to manage coupons, track claims, and control coupon availability.     
+   
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## For the Guest Users
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**You can access:**  
+- **Home Tab**  
+- **Coupons Tab**  
 
-### `npm test`
+### Home Tab  
+Provides a precise description of the functionality of the website.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Coupons Tab  
+Here, guest users can claim coupons. Click on the **Claim Coupon** button to claim a coupon.  
 
-### `npm run build`
+- On successful coupon claim, a **guest cookie** will be generated so you can claim another coupon after a **cooldown period of 10 minutes**.  
+- You can make **10 request calls per 5 minutes**. If you exhaust your limit, you will see this message:  
+  **"Too many requests, please try again later."**  
+- If no coupons are available, you will see this message:  
+  **"No coupons available at the moment. Try again later!"**  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### ⚠️ Note:  
+You can access the **Admin Login Page**, but you **cannot log in** without valid credentials.  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ ## For the Admin User
 
-### `npm run eject`
+**You can access:**  
+- **Home Tab**  
+- **Coupons Tab**  
+- **Admin Tab**  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Home Tab  
+Provides a precise description of the functionality of the website.  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Coupons Tab  
+You can also access the Coupons tab just as the guest users.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Admin Tab  
+Login with your username and password.  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+On successful login, you will be redirected to the **Admin Dashboard**.  
 
-## Learn More
+If not, you will see an error message based on your invalid input credentials.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Admin Dashboard  
 
-### Code Splitting
+### Add New Coupon Section  
+Write your coupon name and click the **Add** button to add a new coupon.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### All Coupons Section  
+First, there are three buttons:  
+- **Enable All** - Enables all the current coupons.  
+- **Disable All** - Disables all the current coupons.  
+- **Remove All** - Removes all coupons from the database.  
 
-### Analyzing the Bundle Size
+Next is the table for status and customization of each coupon:  
+- **Coupon Code** - Displays the coupon name.  
+- **Status** - Shows whether the coupon is Available or Claimed.  
+- **Actions** - You can enable or disable a coupon from here.  
+- **Remove** - You can remove a coupon from here.  
+- **Edit** - You can edit the coupon name from here.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### User Claim History Section  
+Here, you can see the **Guest ID** or the **IP ID** of the users who have claimed the coupons.  
+## **Admin Dashboard - Preloaded Data**  
 
-### Making a Progressive Web App
+When you first access the **Admin Dashboard**, it is pre-filled with:  
+- **10 coupons** already added.  
+- **2 coupons** already claimed by a guest user.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This setup allows the admin to:  
+- Test enabling, disabling, and removing coupons.  
+- Monitor how claimed coupons appear in the **User Claim History Section**.  
+- Ensure the system is functioning correctly before adding new coupons.  
 
-### Advanced Configuration
+**🔹 Note:** If you don't see the preloaded data as described, it means that either **guest users have claimed more coupons** or the **admin has modified the data**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Fontend Deployed Link  
 
-### Deployment
+[Coupon Distributor](https://coupon-distributor-eta.vercel.app/)
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [@fieryprofessor](https://www.github.com/fieryprofessor)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
