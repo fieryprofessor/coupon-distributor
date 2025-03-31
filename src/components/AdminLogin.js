@@ -14,7 +14,7 @@ const AdminLogin = () => {
     setMessage("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/admin/login", credentials);
+      const res = await axios.post("https://round-robin-coupons-5914.onrender.com/api/admin/login", credentials);
       localStorage.setItem("adminToken", res.data.token);
       setMessage(res.data.message || "✅ Login successful!"); // Catch success message
       setTimeout(() => navigate("/admin-dashboard"), 1000);

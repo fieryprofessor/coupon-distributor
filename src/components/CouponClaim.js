@@ -13,7 +13,7 @@ const CouponClaim = () => {
     setCoupon(null);
 
     try {
-      const response = await axios.get("http://localhost:5000/api/coupon",{ withCredentials: true });
+      const response = await axios.get("https://round-robin-coupons-5914.onrender.com/api/coupon",{ withCredentials: true });
       
       if (response.data.success) {
         setCoupon(response.data.coupon);

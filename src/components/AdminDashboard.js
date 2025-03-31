@@ -20,7 +20,7 @@ const AdminDashboard = () => {
   // Fetch all coupons
   const fetchCoupons = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/coupons", {
+      const res = await axios.get("https://round-robin-coupons-5914.onrender.com/api/admin/coupons", {
         headers: { Authorization: token },
       });
       setCoupons(res.data.coupons);
@@ -33,7 +33,7 @@ const AdminDashboard = () => {
   const fetchUserHistory = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/admin/user-history",
+        "https://round-robin-coupons-5914.onrender.com/api/admin/user-history",
         {
           headers: { Authorization: token },
         }
@@ -49,7 +49,7 @@ const AdminDashboard = () => {
     if (!newCoupon.trim()) return;
     try {
       await axios.post(
-        "http://localhost:5000/api/admin/coupons",
+        "https://round-robin-coupons-5914.onrender.com/api/admin/coupons",
         { code: newCoupon },
         { headers: { Authorization: token } }
       );
@@ -64,7 +64,7 @@ const AdminDashboard = () => {
    const editCoupon = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/coupons/${id}/edit`,
+        `https://round-robin-coupons-5914.onrender.com/api/admin/coupons/${id}/edit`,
         { code: editCouponCode },
         { headers: { Authorization: token } }
       );
@@ -80,7 +80,7 @@ const AdminDashboard = () => {
   const toggleCoupon = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/coupons/${id}/toggle`,
+        `https://round-robin-coupons-5914.onrender.com/api/admin/coupons/${id}/toggle`,
         {},
         { headers: { Authorization: token } }
       );
@@ -94,7 +94,7 @@ const AdminDashboard = () => {
   const toggleAllCoupons = async (enable) => {
     try {
       await axios.put(
-        "http://localhost:5000/api/admin/coupons/toggle-all",
+        "https://round-robin-coupons-5914.onrender.com/api/admin/coupons/toggle-all",
         { enable },
         { headers: { Authorization: token } }
       );
@@ -107,7 +107,7 @@ const AdminDashboard = () => {
   //Delete a Coupon
   const deleteCoupon = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/coupons/${id}`, {
+      await axios.delete(`https://round-robin-coupons-5914.onrender.com/api/admin/coupons/${id}`, {
         headers: { Authorization: token },
       });
       fetchCoupons();
@@ -119,7 +119,7 @@ const AdminDashboard = () => {
   // to Delete all coupons
   const removeAllCoupons = async () => {
     try {
-      await axios.delete("http://localhost:5000/api/admin/coupons", {
+      await axios.delete("https://round-robin-coupons-5914.onrender.com/api/admin/coupons", {
         headers: { Authorization: token },
       });
       fetchCoupons(); // Refresh the list
